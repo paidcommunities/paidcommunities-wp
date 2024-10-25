@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "rm -rf ./dist && NODE_ENV=development webpack --mode=development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  },
+  "dependencies": {
+    "paidcommunities-wp": "file:../paidcommunities-wp-1.0.0.tgz"
+  }
+}
