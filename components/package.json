@@ -1,7 +1,10 @@
 {
   "name": "@paidcommunities-wp/components",
-  "version": "1.0.0",
-  "description": "Library that has react components and helper functions for license activation/deactivation",
+  "version": "1.0.1-beta.0",
+  "description": "Library that has react components for rendering license management components.",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "build/components.js",
   "module": "build-module/components.js",
   "files": [
@@ -20,7 +23,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@paidcommunities-wp/api": "file:../api/paidcommunities-wp-api-1.0.0.tgz",
+    "@paidcommunities-wp/api": "^1.0.1-beta.1",
     "classnames": "^2.5.1"
   },
   "peerDependencies": {

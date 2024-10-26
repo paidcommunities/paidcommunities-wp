@@ -1,7 +1,10 @@
 {
   "name": "@paidcommunities-wp/api",
-  "version": "1.0.0",
-  "description": "Library that has react components and helper functions for license activation/deactivation",
+  "version": "1.0.1-beta.1",
+  "description": "Library that has helper functions for activating and deactivating licenses",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "build/api.js",
   "module": "build-module/api.js",
   "files": [
