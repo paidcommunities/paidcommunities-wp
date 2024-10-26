@@ -23,8 +23,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@paidcommunities-wp/api": "^1.0.1-beta.1",
-    "classnames": "^2.5.1"
+    "@paidcommunities-wp/api": "^1.0.1-beta.4",
+    "classnames": "^2.5.1",
+    "sweetalert": "^2.1.2"
   },
   "peerDependencies": {
     "@wordpress/components": "^28.10.0",

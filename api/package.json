@@ -1,6 +1,6 @@
 {
   "name": "@paidcommunities-wp/api",
-  "version": "1.0.1-beta.1",
+  "version": "1.0.1-beta.5",
   "description": "Library that has helper functions for activating and deactivating licenses",
   "publishConfig": {
     "access": "public"

@@ -51,6 +51,14 @@
   }
 }
 
+.PaidCommunitiesButton-root {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  height: 40px;
+}
+
 .components-button {
   &.PaidCommunitiesButton-root {
     font-size: 1rem;
@@ -98,6 +106,10 @@
 
     .LicenseKey {
       width: 100%;
+    }
+
+    .PaidCommunitiesButton-root{
+      margin-left: 0;
     }
 
     .components-button {

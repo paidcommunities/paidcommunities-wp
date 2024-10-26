@@ -13,7 +13,14 @@ const deactivate = async (slug, data) => {
         }).done(response => {
             return resolve(response);
         }).fail((jqXHR) => {
-            return resolve({});
+            return resolve({
+                success: false,
+                error: {
+                    code: 'general_error',
+                    status: jqXHR.status,
+                    message: jqXHR.statusText
+                }
+            });
         })
     })
 }

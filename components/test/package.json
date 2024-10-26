@@ -14,7 +14,7 @@
     "express": "^4.21.1"
   },
   "dependencies": {
-    "@paidcommunities-wp/components": "file:../paidcommunities-wp-components-1.0.0.tgz",
-    "@paidcommunities-wp/api": "file:../../api/paidcommunities-wp-api-1.0.0.tgz"
+    "@paidcommunities-wp/api": "^1.0.1-beta.1",
+    "@paidcommunities-wp/components": "file:../paidcommunities-wp-components-1.0.1-beta.0.tgz"
   }
 }

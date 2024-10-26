@@ -15,7 +15,8 @@ const App = () => {
                         deactivateMsg: 'Deactivating...',
                         activateMsg: 'Activating...',
                         deactivateLicense: 'Deactivate',
-                        activateLicense: 'Activate'
+                        activateLicense: 'Activate',
+                        general_error: 'Activation Error!'
                     },
                     license: {
                         registered: false
