@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 const deactivate = async (slug, data) => {
     const searchParams = new URLSearchParams();
-    searchParams.append('action', `activate_${slug}`);
+    searchParams.append('action', `deactivate_${slug}`);
 
     return new Promise((resolve) => {
         $.ajax({
