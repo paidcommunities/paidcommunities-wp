@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "clean:build": "rm -rf ./build",
+    "build:prod": "npm run clean:build && NODE_ENV=production webpack --mode=production"
+  },
+  "dependencies": {
+    "@paidcommunities-wp/api": "^1.0.1-beta.5",
+    "sweetalert": "^2.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.9",
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-proposal-async-generator-functions": "^7.20.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/preset-env": "^7.26.0",
+    "@wordpress/browserslist-config": "^6.10.0",
+    "@wordpress/dependency-extraction-webpack-plugin": "^6.10.0",
+    "babel-loader": "^9.2.1",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

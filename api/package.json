@@ -1,6 +1,6 @@
 {
   "name": "@paidcommunities-wp/api",
-  "version": "1.0.1-beta.5",
+  "version": "1.0.1-beta.6",
   "description": "Library that has helper functions for activating and deactivating licenses",
   "publishConfig": {
     "access": "public"
@@ -37,8 +37,5 @@
     "lodash": "^4.17.21",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4"
-  },
-  "dependencies": {
-    "sweetalert": "^2.1.2"
   }
 }
