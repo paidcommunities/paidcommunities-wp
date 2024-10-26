@@ -48,7 +48,7 @@ const config = {
             injectPolyfill: true,
             requestToHandle: request => {
                 const handles = {
-                    '@paidcommunities-wp/api': 'paidcommunities-wp-ap'
+                    '@paidcommunities-wp/api': 'paidcommunities-wp-api'
                 }
                 return handles[request] ?? undefined;
             },
