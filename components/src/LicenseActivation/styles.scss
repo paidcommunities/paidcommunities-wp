@@ -37,14 +37,14 @@
   font-weight: 700;
 }
 
-.PaidCommunitiesInput-text {
+.PaidCommunitiesInput-text[type=text] {
   @include input-props;
 }
 
 .woocommerce {
   table {
     &.form-table {
-      .PaidCommunitiesInput-text {
+      .PaidCommunitiesInput-text[type=text] {
         @include input-props;
       }
     }
@@ -108,7 +108,7 @@
       width: 100%;
     }
 
-    .PaidCommunitiesButton-root{
+    .PaidCommunitiesButton-root {
       margin-left: 0;
     }
 
