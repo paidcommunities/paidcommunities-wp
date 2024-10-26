@@ -1,11 +1,9 @@
 import React from 'react';
 import {useState, useCallback} from 'react';
 import {Button} from '@wordpress/components';
-import {activate, deactivate} from '../api';
+import {activate, deactivate} from '@paidcommunities-wp/api';
 import swal from 'sweetalert';
 import classnames from 'classnames';
-
-import './styles.scss';
 
 export default function LicenseActivation(
     {

@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "rm -rf ./dist && NODE_ENV=development webpack --mode=development"
+    "test": "rm -rf dist && NODE_ENV=development webpack --mode=development"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,7 @@
     "express": "^4.21.1"
   },
   "dependencies": {
-    "paidcommunities-wp": "file:../paidcommunities-wp-1.0.0.tgz"
+    "@paidcommunities-wp/components": "file:../paidcommunities-wp-components-1.0.0.tgz",
+    "@paidcommunities-wp/api": "file:../../api/paidcommunities-wp-api-1.0.0.tgz"
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {fn} from '@storybook/test';
-import LicenseActivation from "./LicenseActivation";
+import Index from "./LicenseActivation";
 
 import './styles.scss';
 
@@ -19,7 +19,7 @@ const CONFIG = {
 
 export default {
     title: 'Example/LicenseActivation',
-    component: LicenseActivation,
+    component: Index,
     argTypes: {
         config: {control: 'object'}
     },
@@ -30,7 +30,7 @@ export default {
 
 export const Default = (props) => {
     window.ajaxurl = '/wp-admin/admin-ajax.php';
-    return <LicenseActivation {...props} />
+    return <Index {...props} />
 }
 Default.args = {
     config: CONFIG

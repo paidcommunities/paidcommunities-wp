@@ -1,14 +1,7 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
-import 'paidcommunities-wp/dist/styles.css';
-
-const {
-    components
-} = paidcommunities.wp;
-
-const {
-    LicenseActivation
-} = components;
+import {LicenseActivation} from '@paidcommunities-wp/components';
+import '@paidcommunities-wp/components/build-style/styles.css';
 
 window.ajaxurl = '/wp-admin/admin-ajax.php';
 

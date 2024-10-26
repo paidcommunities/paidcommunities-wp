@@ -1,5 +1,5 @@
-import * as api from './api';
-import * as components from './components';
+import * as api from './api/src';
+import * as components from './components/src';
 
 // Export for ES modules
 export {

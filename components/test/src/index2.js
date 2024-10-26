@@ -1,7 +1,10 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
-import {components} from 'paidcommunities-wp';
-import 'paidcommunities-wp/dist/styles.css';
+import '@paidcommunities-wp/components/build-style/styles.css';
+
+const {
+    components
+} = paidcommunities.wp;
 
 const {
     LicenseActivation

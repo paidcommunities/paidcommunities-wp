@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import swal from 'sweetalert';
-import {activate, deactivate} from '@paidcommunities/wordpress-api';
+import {activate, deactivate} from '@paidcommunities-wp/api';
 
 const handleButtonClick = async e => {
     e.preventDefault();

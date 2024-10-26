@@ -1,22 +1,28 @@
 {
-  "name": "paidcommunities-wp",
+  "name": "@paidcommunities-wp/components",
   "version": "1.0.0",
   "description": "Library that has react components and helper functions for license activation/deactivation",
-  "main": "dist/paidcommunities-wp.js",
-  "module": "dist/paidcommunities-wp.js",
+  "main": "build/components.js",
+  "module": "build-module/components.js",
   "files": [
-    "dist"
+    "build",
+    "build-module",
+    "build-style"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "clean:build": "rm -rf ./dist",
+    "clean:build": "rm -rf ./build ./build-module",
     "build:prod": "npm run clean:build && NODE_ENV=production webpack --mode=production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@paidcommunities-wp/api": "file:../api/paidcommunities-wp-api-1.0.0.tgz",
+    "classnames": "^2.5.1"
+  },
   "peerDependencies": {
     "@wordpress/components": "^28.10.0",
     "jquery": "^3.6.0",
@@ -55,9 +61,5 @@
     "style-loader": "^4.0.0",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4"
-  },
-  "dependencies": {
-    "classnames": "^2.5.1",
-    "sweetalert": "^2.1.2"
   }
 }
