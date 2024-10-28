@@ -8,7 +8,9 @@ import classnames from 'classnames';
 export default function LicenseActivation(
     {
         config,
-        className = ''
+        className = '',
+        onActivate = activate,
+        onDeactivate = deactivate
     }) {
     if (!config) {
         throw new Error('A config object is required.');
@@ -24,19 +26,34 @@ export default function LicenseActivation(
 
     const onChange = event => setLicenseKey(event.target.value);
 
-    const onActivate = useCallback(async () => {
+    const onClick = useCallback(type => async () => {
         setProcessing(true);
         try {
-            const data = {
-                nonce,
-                license_key: licenseKey
-            };
-            const response = await activate(slug, data);
-            if (!response.success) {
-                addNotice(i18n, response.error, 'error');
-            } else {
-                addNotice(i18n, response.data.notice, 'success');
-                setLicense(response.data.license);
+            let response;
+            switch (type) {
+                case 'activate':
+                    const data = {
+                        nonce,
+                        license_key: licenseKey
+                    };
+                    response = await onActivate(slug, data);
+                    if (!response.success) {
+                        addNotice(i18n, response.error, 'error');
+                    } else {
+                        addNotice(i18n, response.data.notice, 'success');
+                        setLicense(response.data.license);
+                    }
+                    break;
+                case 'deactivate':
+                    response = await onDeactivate(slug, {nonce});
+                    if (!response.success) {
+                        addNotice(i18n, response.error, 'error');
+                    } else {
+                        addNotice(i18n, response.data.notice, 'success');
+                        setLicense(response.data.license);
+                        setLicenseKey('');
+                    }
+                    break;
             }
         } catch (error) {
             addNotice(i18n, error, 'error');
@@ -45,23 +62,6 @@ export default function LicenseActivation(
         }
     }, [licenseKey]);
 
-    const onDeactivate = useCallback(async () => {
-        setProcessing(true);
-        try {
-            const response = await deactivate(slug, {nonce});
-            if (!response.success) {
-                addNotice(i18n, response.error, 'error');
-            } else {
-                addNotice(i18n, response.data.notice, 'success');
-                setLicense(response.data.license);
-                setLicenseKey('');
-            }
-        } catch (error) {
-            addNotice(i18n, error, 'error');
-        } finally {
-            setProcessing(false);
-        }
-    }, []);
 
     return (
         <div className={classnames('PaidCommunitiesLicense-settings', className)}>
@@ -70,16 +70,20 @@ export default function LicenseActivation(
                     <div className="PaidCommunitiesStack-root LicenseKeyOptionGroup">
                         <label className="PaidCommunitiesLabel-root">{i18n.licenseKey}</label>
                         <div className={classnames('PaidCommunitiesInputBase-root', {
-                            'LicenseRegistered': license.registered
+                            'LicenseStatus-active': license.status === 'active',
+                            'LicenseStatus-inactive': license.status === 'inactive'
                         })}>
                             {license.registered &&
-                                <input className="PaidCommunitiesInput-text LicenseKey"
-                                       type={'text'}
-                                       disabled
-                                       value={license.license_key}/>
+                                <input
+                                    type={"text"}
+                                    className="PaidCommunitiesInput-text LicenseKey"
+                                    type={'text'}
+                                    disabled
+                                    value={license.license_key}/>
                             }
                             {!license.registered &&
                                 <input
+                                    type={"text"}
                                     className="PaidCommunitiesInput-text LicenseKey"
                                     value={licenseKey}
                                     onChange={onChange}
@@ -93,7 +97,7 @@ export default function LicenseActivation(
                                 text={processing ? i18n.deactivateMsg : i18n.deactivateLicense}
                                 isBusy={processing}
                                 disabled={processing}
-                                onClick={onDeactivate}>
+                                onClick={onClick('deactivate')}>
                             </Button>
                         }
                         {!license.registered &&
@@ -103,7 +107,7 @@ export default function LicenseActivation(
                                 text={processing ? i18n.activateMsg : i18n.activateLicense}
                                 isBusy={processing}
                                 disabled={processing}
-                                onClick={onActivate}/>
+                                onClick={onClick('activate')}/>
                         }
                     </div>
                 </div>
