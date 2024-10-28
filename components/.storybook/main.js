@@ -17,6 +17,7 @@ const config = {
     name: "@storybook/react-webpack5",
     options: {},
   },
+  staticDirs: ['./public'],
   webpackFinal: async (config) => {
     // Existing WordPress components alias
     config.resolve.alias['@wordpress/components'] = path.resolve(__dirname, '../node_modules/@wordpress/components');
