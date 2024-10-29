@@ -36,7 +36,7 @@ const handleButtonClick = async e => {
             addNotice(props.i18n, response.error, 'error');
         } else {
             addNotice(props.i18n, response.data.notice, 'success');
-            $('.PaidCommunitiesLicense-settings').replaceWith(response.data.html);
+            $button.closest('.PaidCommunitiesLicense-settings').replaceWith(response.data.html);
         }
     } catch (error) {
         return addNotice(props.i18n, error);
