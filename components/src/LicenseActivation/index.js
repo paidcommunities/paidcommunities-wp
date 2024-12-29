@@ -20,7 +20,7 @@ export default function LicenseActivation(
     const [processing, setProcessing] = useState(false);
     const {
         i18n,
-        slug,
+        basename,
         nonce
     } = config;
 
@@ -36,7 +36,7 @@ export default function LicenseActivation(
                         nonce,
                         license_key: licenseKey
                     };
-                    response = await onActivate(slug, data);
+                    response = await onActivate(basename, data);
                     if (!response.success) {
                         addNotice(i18n, response.error, 'error');
                     } else {
@@ -45,7 +45,7 @@ export default function LicenseActivation(
                     }
                     break;
                 case 'deactivate':
-                    response = await onDeactivate(slug, {nonce});
+                    response = await onDeactivate(basename, {nonce});
                     if (!response.success) {
                         addNotice(i18n, response.error, 'error');
                     } else {
