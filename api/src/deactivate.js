@@ -1,8 +1,8 @@
 import $ from 'jquery';
 
-const deactivate = async (slug, data) => {
+const deactivate = async (basename, data) => {
     const searchParams = new URLSearchParams();
-    searchParams.append('action', `deactivate_${slug}`);
+    searchParams.append('action', `deactivate_${basename}`);
 
     return new Promise((resolve) => {
         $.ajax({
