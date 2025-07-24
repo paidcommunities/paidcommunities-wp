@@ -5,6 +5,7 @@ import LicenseActivation from "./index";
 import './styles.scss';
 
 const CONFIG = {
+    slug: 'test-plugin',
     i18n: {
         licenseKey: 'License Key',
         deactivateMsg: 'Deactivating...',
@@ -29,7 +30,7 @@ export default {
     },
     args: {
         onActivate: () => alert('activated'),
-        onDeactivate: () => alert('deactivated'),
+        onDeactivate: () => alert('activated'),
         apiService: {
             activate: () => ({
                 success: true,
@@ -60,7 +61,6 @@ export default {
                 }
             })
         }
-
     }
 };
 
@@ -77,7 +77,7 @@ export const Active = {
             license: {
                 status: 'active',
                 registered: true,
-                license_key: '***********************CE5ED990'
+                license_key: '***********************4pZMj6B5'
             }
         }
     }
@@ -90,7 +90,7 @@ export const Inactive = {
             license: {
                 status: 'inactive',
                 registered: true,
-                license_key: '***********************CE5ED990'
+                license_key: '***********************4pZMj6B5'
             }
         }
     }
