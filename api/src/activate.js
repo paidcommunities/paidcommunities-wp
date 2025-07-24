@@ -1,8 +1,8 @@
 import $ from 'jquery';
 
-const activate = async (slug, data) => {
+const activate = async (basename, data) => {
     const searchParams = new URLSearchParams();
-    searchParams.append('action', `activate_${slug}`);
+    searchParams.append('action', `activate_${basename}`);
 
     return new Promise((resolve) => {
         $.ajax({

@@ -34,7 +34,7 @@ export default function LicenseActivation(
     const [processing, setProcessing] = useState(false);
     const {
         i18n,
-        slug,
+        basename,
         nonce
     } = config;
 

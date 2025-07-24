@@ -60,6 +60,7 @@ export default {
                 }
             })
         }
+
     }
 };
 
@@ -76,7 +77,7 @@ export const Active = {
             license: {
                 status: 'active',
                 registered: true,
-                license_key: '***********************4pZMj6B5'
+                license_key: '***********************CE5ED990'
             }
         }
     }
@@ -89,7 +90,7 @@ export const Inactive = {
             license: {
                 status: 'inactive',
                 registered: true,
-                license_key: '***********************4pZMj6B5'
+                license_key: '***********************CE5ED990'
             }
         }
     }
