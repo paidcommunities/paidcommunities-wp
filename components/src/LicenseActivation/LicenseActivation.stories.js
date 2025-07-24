@@ -28,34 +28,38 @@ export default {
         config: {control: 'object'}
     },
     args: {
-        onActivate: () => ({
-            success: true,
-            data: {
-                notice: {
-                    code: 'activate_success',
-                    message: 'License key activated.'
-                },
-                license: {
-                    status: 'active',
-                    registered: true,
-                    license_key: '***********************4pZMj6B5'
+        onActivate: () => alert('activated'),
+        onDeactivate: () => alert('deactivated'),
+        apiService: {
+            activate: () => ({
+                success: true,
+                data: {
+                    notice: {
+                        code: 'activate_success',
+                        message: 'License key activated.'
+                    },
+                    license: {
+                        status: 'active',
+                        registered: true,
+                        license_key: '***********************4pZMj6B5'
+                    }
                 }
-            }
-        }),
-        onDeactivate: () => ({
-            success: true,
-            data: {
-                notice: {
-                    code: 'deactivate_success',
-                    message: 'License key deactivated.'
-                },
-                license: {
-                    status: '',
-                    registered: false,
-                    license_key: '***********************4pZMj6B5'
+            }),
+            deactivate: () => ({
+                success: true,
+                data: {
+                    notice: {
+                        code: 'deactivate_success',
+                        message: 'License key deactivated.'
+                    },
+                    license: {
+                        status: '',
+                        registered: false,
+                        license_key: '***********************4pZMj6B5'
+                    }
                 }
-            }
-        })
+            })
+        }
     }
 };
 

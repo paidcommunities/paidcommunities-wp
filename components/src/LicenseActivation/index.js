@@ -5,12 +5,26 @@ import {activate, deactivate} from '@paidcommunities-wp/api';
 import swal from 'sweetalert';
 import classnames from 'classnames';
 
+/**
+ *
+ * @param config
+ * @param className
+ * @param onActivate - Triggered when the license activation process is complete. This callback can be used to perform post activation
+ * processes.
+ * @param onDeactivate - Triggered when the license has been deactivated. This callback can be used to perform post deactivation processes.
+ * @param apiService - object tht accepts an activate and deactivate function if you wish to override the license activation and deactivation api calls.
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export default function LicenseActivation(
     {
         config,
         className = '',
-        onActivate = activate,
-        onDeactivate = deactivate
+        onActivate = () => {
+        },
+        onDeactivate = () => {
+        },
+        apiService = {activate, deactivate}
     }) {
     if (!config) {
         throw new Error('A config object is required.');
@@ -36,22 +50,24 @@ export default function LicenseActivation(
                         nonce,
                         license_key: licenseKey
                     };
-                    response = await onActivate(slug, data);
+                    response = await apiService.activate(slug, data);
                     if (!response.success) {
                         addNotice(i18n, response.error, 'error');
                     } else {
                         addNotice(i18n, response.data.notice, 'success');
                         setLicense(response.data.license);
+                        await onActivate();
                     }
                     break;
                 case 'deactivate':
-                    response = await onDeactivate(slug, {nonce});
+                    response = await apiService.deactivate(slug, {nonce});
                     if (!response.success) {
                         addNotice(i18n, response.error, 'error');
                     } else {
                         addNotice(i18n, response.data.notice, 'success');
                         setLicense(response.data.license);
                         setLicenseKey('');
+                        await onDeactivate();
                     }
                     break;
             }
