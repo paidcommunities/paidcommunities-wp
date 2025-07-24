@@ -5,7 +5,7 @@ import LicenseActivation from "./index";
 import './styles.scss';
 
 const CONFIG = {
-    slug: 'test-plugin',
+    basename: 'test-plugin/test-plugin.php',
     i18n: {
         licenseKey: 'License Key',
         deactivateMsg: 'Deactivating...',

@@ -1,6 +1,6 @@
 {
   "name": "@paidcommunities-wp/components",
-  "version": "1.0.2",
+  "version": "1.0.3-beta.1",
   "description": "Library that has react components for rendering license management components.",
   "publishConfig": {
     "access": "public"
